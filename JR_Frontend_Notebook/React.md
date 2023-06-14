@@ -6,11 +6,11 @@ Readable, Maintainable, Reusable
 => 人类的大脑不会做if else ，所以if else一定有问题的
 => 行业统一标准：SOLID，
 => 重点是：
-1, Single Responsibility		单一职责
+1. Single Responsibility		单一职责
 项目中，任何一块代码，都应该有且只有一个责任
-2, Open/ Close			开关指责
+2. Open/ Close			开关指责
 在任何一块独立的责任代码中，都应该仅对我们希望更改的地方（接口）开放，且对逻辑的更改关闭
-3, Dependency Injection 	依赖注入
+3. Dependency Injection 	依赖注入
 在任何一块独立的责任代码中，如果有一部分数据是依赖数据，那么这个依赖应该是被注入进来的，而不是通过内部逻辑产生的
 
 2道题目：
