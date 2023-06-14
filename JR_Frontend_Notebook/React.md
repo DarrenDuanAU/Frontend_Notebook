@@ -1,7 +1,7 @@
 好的代码有什么特点：
--可读，Readable
--可维护，Maintainable
--可复用, Reusable
+- 可读，Readable
+- 可维护，Maintainable
+- 可复用, Reusable
 
 如何写出可读的代码：符合人类基本思维的代码，就是可读的代码
 => 人类的大脑不会做if else ，所以if else一定有问题的
