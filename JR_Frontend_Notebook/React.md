@@ -31,5 +31,5 @@ const getStops = (flights) => {
   return SPECIAL_CONDITION[numOfStops] || `${numOfStops} stops`
 }
 console.log(getStops(flights))
-```Javascript
+```
 
