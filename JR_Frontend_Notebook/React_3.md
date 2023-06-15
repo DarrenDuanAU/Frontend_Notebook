@@ -98,3 +98,10 @@ eSSENTIAL assessment，让残章人士也可以有很好的体验。（例如：
 }
 ```
 
+- JSX是 React 独创 （JSX：在JS里面写HTML like component；实际上我们可以在JS中写CSS，SVG，png，jpg，gif），这些是*Babel*实现的
+- 为什么我们要用function？因为我们需要切割（封装）代码，切割逻辑 => 单一职责原则
+- React提供了一种可以在JS中写 HTML like的code的方法
+- react的组件（component）命名规范是什么？ => 首字母大写 => 用来区分HTML tag和组件
+- 要对code多思考，问一个为什么 => 面试的时候如果可以变成茶话会，基本上就可以进了
+- React 拆分组件是很重要的基本功
+
