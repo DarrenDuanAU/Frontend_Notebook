@@ -107,9 +107,14 @@ function NavbarItem({
 export default NavbarItem;
 
 ```
+React hooks 指在 React 中与渲染相关联的方法函数
+如果一个函数与渲染无关，那就没必要是一个 hooks，就没有必要以 use 开头
 
 个人感受：
 - 不用做很多项目，每个项目好好打磨，根据readable，maintainable，reusable和SOLID的方向，不断challenge自己的code，就会有所提升。项目不在多，在于个人的思考和不断提升代码质量。
+- 可以看一下，面试题目，可以给自己一些提高的方向
+
+
 
 
 
