@@ -1,5 +1,6 @@
 
-# 思考方式：像傻子一样写 React
+# React的思考方式：React的哲学
+- 像傻子一样写 React
 
 ## 从设计稿开始
 
@@ -100,8 +101,6 @@ const WeatherCard = () => {
         - WeatherIcon （渲染 WeatherIcon 样式，细节样式）
         - Temperature（渲染 Temperature 样式，细节样式）
 
-
-
 - temperature
 - WeatherIcon
 - Name
@@ -112,15 +111,27 @@ const WeatherCard = () => {
 
 ## 第二步：使用 React 构建一个静态版本
 
-## 第三步：发现 UI 精简且完整的 State 表示
+## 第三步：发现 UI 最小且完整的 State 表示
 
-## 个人笔记
-- state和variable不一样的， state是为了页面变化存在的。（如果需要临时存储一个值，我们需要的variable，不应该存在state里面。
+state和variable不一样的， state是为了页面变化存在的。（如果需要临时存储一个值，我们需要的variable，不应该存在state里面。
 
-- 像傻子一样写React，将写法固定下来，不去去思考，通过大量的练习，形成肌肉记忆。
+- 每一处 UI 变化都对应着一个 state。
+- 每一处 调取 UI 都对应着一个 Effect。
+- 不要copy paste （一般都可以做一个复用的function或者component）
 
+### 基础知识
+
+useEffect(fn,[])
+- Effect 副作用，当所在组件第一次渲染时，fn会运行一次，当[]中有依赖时候(一般是一个state)，当这个state变化的时候，这个effect就会变化。 
 
 ## 第四步： 验证 state 应该被放置在哪里
+
+数据传输的几种情况：
+- 父传子: props
+- 子传父: state lifting 到父组件
+- 亲戚相传: state lifting 到亲戚的最共用小父组件
+
+- 像傻子一样写React，将写法固定下来，不去去思考，通过大量的练习，形成肌肉记忆。
 
 ## 第五步： 添加反向数据流
 
