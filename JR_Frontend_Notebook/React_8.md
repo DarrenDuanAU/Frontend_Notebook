@@ -14,8 +14,21 @@
 7. 不要 IF ELSE
 8. 不要过度设计
 9. 就近维护原则
+10. 好的代码写三遍，自我怀疑，自我否定，学习
 
 
 课后学习：
 - Axios
 - 《 Atomic Design by Brad Frost 》 书
+
+
+# 个人笔记
+- 学习方式的改变：应该多看相关技术的Doc，而不是直接去看youtube，看Doc会更准确，更高效的学习。
+
+
+## 目标计划：
+1. 每日更新GitHub。
+2. 把assign2和assign3，exam/sample-exam重新做一遍。
+3. 做完P1，P2，P3，基本上可以让自己从js，和React毕业。
+4. 把HTML，和CSS所有内容过一遍（熟读并背诵）
+5. 看一遍React Docs，中文的也可以

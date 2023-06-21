@@ -17,7 +17,7 @@
       - left_lowerBox
       - right_lowerBox
 
-这样划分有很大问题，主要问题 no readable
+这样划分有很大问题，主要问题 not readable
 
 重新划分：
 
@@ -135,7 +135,7 @@ useEffect(fn,[])
 
 ## 第五步： 添加反向数据流
 
-
+- N/A
 
 
 # 个人笔记
@@ -153,5 +153,5 @@ useEffect(fn,[])
 - P2 API => openweathermap.org
 
 ## React_7
-- 
+- N/A
 
