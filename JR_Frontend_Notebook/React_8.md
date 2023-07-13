@@ -15,6 +15,21 @@
 8. 不要过度设计
 9. 就近维护原则
 10. 好的代码写三遍，自我怀疑，自我否定，学习
+11. 按照人类思维的方式写代码
+
+- Project structure
+- component
+- props
+- state (不同类型的 State)
+- state lifting
+- effect
+- api
+- tailwind
+- 反向数据流
+
+- React 哲学
+- 肌肉记忆
+- 像傻子一样写代码
 
 
 课后学习：
