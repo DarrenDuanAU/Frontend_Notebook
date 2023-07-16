@@ -33,13 +33,13 @@
 
 - Library (声明式，组件化) react
 - Scaffold (babel, webpack) create-react-app, vite
-- Framework (路由[react-router-dom], 资源管理[image-optimize, svg-awesome], api...)
+- Framework (路由[react-router-dom], 资源管理[image-optimize, svg-awesome], api...) => Next.js
 
 
 ## Babel 的作用
 - Babel是非标准 JavaScript 的编译器
 - JavaScript 本身是不需要编译的，是一种脚本语言，可以直接运行在浏览器中
-- JSX 是不是脚步语言？ => 不是，JSX 是一种语法糖，需要编译成 JavaScript 才能运行在浏览器中
+- JSX 是不是脚步语言？ => 不是，JSX 是一种语法糖，需要编译成 JavaScript 才能运行在浏览器中 
 
 
 ## Webpack
