@@ -1,5 +1,14 @@
 console.log('start')
 
+let x = 0;
+if ( true ){
+  setTimeout(() => {
+    x = 1;
+  }, 0)
+  if ( x === 1) {
+    console.log('x === 1')
+  }
+}
 setTimeout(() => {
   console.log('setTimeout 0 ssc, test1')
 }, 0)
