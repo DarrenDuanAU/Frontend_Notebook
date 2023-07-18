@@ -40,3 +40,15 @@ $git reset HEAD^回退到上个版本，内容回到工作区 (感觉这个好�
 $git reset —soft HEAD~1 回退到上个版本，内容回到staged changes
 $git reset —hard HEAD~1 回退到上个版本，改变的内容清空
 $git reset <commit.ID> 回退到指定版本，改变的内容清空
+
+## 如何在把本地的repo链接到自己的GitHub，然后push？
+1. 在Github建一个new repo（最好跟自己本地的文件同名）
+
+### 本地(local)
+比入你打算上传一个 本地project：my-project
+1. cd my-project
+2. git init
+3. git add .
+4. git commit -m 'first commit'
+5. git remote add origin https://github.com/<your GitHub Acount>/my-project
+6. git push origin main

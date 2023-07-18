@@ -48,3 +48,24 @@ redux + react-redux
 ## HOC
 a function that take a component and return a new component code reuse. hoc is pure function no side effect.
 
+//2023/07/18 个人笔记
+
+## 如何根据在preState，更新state。
+
+
+```javaScript
+  const addNote = () => {
+    setNotes( preState => [...preState, inputText])
+  }
+
+  const deleteNote = (e) => {
+    const index = Number(e.target.id)
+    setNotes( preState => { 
+      //重点就在于 把 preSate用[...preState]这种写法保存在tempList内，然后再操作tempList后，return tempList
+      const tempList = [...preState]
+      tempList.splice(index,1)
+      return tempList
+    })
+  }
+
+```
