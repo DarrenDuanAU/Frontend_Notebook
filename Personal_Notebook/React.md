@@ -69,3 +69,29 @@ a function that take a component and return a new component code reuse. hoc is p
   }
 
 ```
+
+//2023/07/29 个人笔记
+
+```js
+  const moveBlock = (direction) => {
+    setBlocks(prevState => {
+      const prevBlocks = [...prevState];
+      //这里注意，要把 prevState 通过上面的方式倒出来，这样在改变Blocks state的时候，才会re-render。
+      return BlockHandler(prevBlocks,direction)
+    })
+  }
+```
+
+```js
+useEffect(()=>{
+  console.log('blocks update!')
+},[blocks])
+
+  const moveBlock = (direction) => {
+    setBlocks(prevState => {
+      const prevBlocks = [...prevState];
+      return prevBlocks
+      //这里就算我们 没有改变blocks的值，只是这样倒腾一下，依然会trigger 上面的 useEffect，每次都会打印出来 blocks update!
+    })
+  }
+```
