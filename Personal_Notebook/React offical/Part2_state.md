@@ -45,3 +45,25 @@ const [status, setStatus] = useState('typing'); // 'typing', 'submitting', or 's
 ```
 
 https://zh-hans.react.dev/learn/choosing-the-state-structure
+
+# 更新函数
+
+```js
+import { useState } from 'react';
+
+export default function Counter() {
+  const [number, setNumber] = useState(0);
+
+  return (
+    <>
+      <h1>{number}</h1>
+      <button onClick={() => {
+        setNumber(number + 5);    //  number是当前的值，把number set到（当前的值+5）
+        setNumber(n => n + 1);    //  n => n + 1 是更新函数，这个函数放到更新队列中，按次序更新
+      }}>增加数字</button>
+    </>
+  )
+}
+
+```
+
