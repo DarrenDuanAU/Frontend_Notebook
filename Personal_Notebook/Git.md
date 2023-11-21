@@ -30,16 +30,17 @@ Git分为：工作区，缓存区（staged changes），repo。三个区域。
 一般通过git status检查工作区内和缓存区内有什么文件。通过git add把文件从工作区放入缓存区，然后通过git commit把文件从缓存区存入repo。这个也可以在vscode内的source control来看。
 
 误删：
-3，本身checkout就是还原到最近commit的版本，所以当我们误删了文件x后，我们可以用git checkout — <x>就可以让文件重新还原。
+- 本身checkout就是还原到最近commit的版本，所以当我们误删了文件x后，我们可以用git checkout — <x>就可以让文件重新还原。
 没有add前：
-1，我们用git checkout — <file.name> 把撤销工作区某个文件的改动（或者在source control内的changes点击discard change）
+- 我们用git checkout — <file.name> 把撤销工作区某个文件的改动（或者在source control内的changes点击discard change）
 没有commit前：
-2，我们用git reset head <file.name> 我们可以把文件从缓存区（staged change)放回到工作区(changes)。（或者在source control内的staged changes点击减号（➖））。
+- 我们用git reset head <file.name> 我们可以把文件从缓存区（staged change)放回到工作区(changes)。（或者在source control内的staged changes点击减号（➖））。
 已经commit后：
-$git reset HEAD^回退到上个版本，内容回到工作区 (感觉这个好用一点）
-$git reset —soft HEAD~1 回退到上个版本，内容回到staged changes
-$git reset —hard HEAD~1 回退到上个版本，改变的内容清空
-$git reset <commit.ID> 回退到指定版本，改变的内容清空
+
+- $git reset HEAD^回退到上个版本，内容回到工作区 (感觉这个好用一点）
+- $git reset —soft HEAD~1 回退到上个版本，内容回到staged changes
+- $git reset —hard HEAD~1 回退到上个版本，改变的内容清空
+- $git reset <commit.ID> 回退到指定版本，改变的内容清空
 
 ## 如何在把本地的repo链接到自己的GitHub，然后push？
 1. 在Github建一个new repo（最好跟自己本地的文件同名）
