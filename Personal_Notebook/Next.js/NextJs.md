@@ -13,12 +13,12 @@
 conclusion: Service-side rendering is has more benefit comparing with client-side rendering, but SSR will lose user inteaction feature => Next.js use server-side rendering as default. so we should extract smallest components as 'use Client' component (which is CSR), so we can have SSR as default while keeping the user interaction features.
 
 
-# Static (at build time) rendering VS Dynamic (at request time) rendering
+### Static (at build time) rendering VS Dynamic (at request time) rendering
 
 since most of the component are rendered on the server side, server will treated the components as a static page as default, we need to add { cache: 'no-store' } in as a arguments in fetch function, the compoent will be treated as a Dynamic rendered component.
 
 
-Summary
+## Summary
 - Next.js is a framework for building fast, and search-engine friendly applications. 
 - It includes a compiler for transforming and minifying JavaScript code, a Command-line Interface (CLI) for building and starting our application, and a Node.js runtime for running backend code. This enables full-stack development. 
 - With Next.js, we can render our components on the server and return their content to the client. This technique is called Server-side Rendering (SSR) and makes our applications search-engine friendly. 
