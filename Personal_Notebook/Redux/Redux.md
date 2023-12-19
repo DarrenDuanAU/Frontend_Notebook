@@ -40,3 +40,22 @@ let fn = sayHello(); //注意我们这里call了这个sayHello的fucntion，和�
 let message = fn();
 
 ```
+
+### Currying
+
+```js 
+trim = str => str.trim();
+wrap = type => str => `<${type}>${str}<${type}>`;
+toLowerCase = str => str.toLowerCase();
+
+//这里我们用pipe，让input可以被trim, toLowerCase, wrap("div") 逐个处理（上一个的return是下一个的入参），trim, toLowerCase, wrap("div") 现在都是以str为input的function。
+transform = pipe(trim, toLowerCase, wrap("div"));
+le.log(transform(input));
+```
+
+### pure function
+- No random values
+- No current date/time
+- No global state (DOM, files, db, etc)
+
+
