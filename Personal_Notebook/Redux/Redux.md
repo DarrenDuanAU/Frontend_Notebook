@@ -57,5 +57,25 @@ le.log(transform(input));
 - No random values
 - No current date/time
 - No global state (DOM, files, db, etc)
+- No mutation of parameters
+
+```js
+// impure function
+function isEligible(age) {
+  return age > minAge; //minAge is a global variable
+}
+
+//pure function
+function isEligible(age, minAge) {
+  return age > minAge; 
+}
+```
+
+Benefits
+- self-documenting
+- Easily testable
+- Concurrency
+- Cacheable
 
 
+## Redux Fundamentals
