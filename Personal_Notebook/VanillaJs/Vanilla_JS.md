@@ -11,7 +11,7 @@ Node.js 包含
 ``` javaScript
 console.log('start')
 
-# 以下的 setTimeout 都是异步程序，都会送到Node APIs中，然后移动到callback queue中
+// 以下的 setTimeout 都是异步程序，都会送到Node APIs中，然后移动到callback queue中
 setTimeout(() => {
   console.log('setTimeout 0 ssc, test1')
 }, 0)
@@ -27,7 +27,7 @@ setTimeout(() => {
   console.log('setTimeout 2 ssc, test2')
 }, 2000)
 
-# 同步程序
+// 同步程序
 function test() {
   console.log('the function')
 }
