@@ -1,9 +1,8 @@
-## PRIMARY
+# BASICS
 
 ## what's node
 - node is C++ program with V8(chrome browser engine), so we can run Js outside of browser
 
-## basics
 
 ### Primitives/Value Types & Reference Type
 - Primitives/Value Types
