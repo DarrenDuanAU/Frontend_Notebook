@@ -62,7 +62,7 @@ console.log(circle);
 // output: { redius: 1 }
 ```
 
-### objects are reference type
+### Objects are reference type
 
 ```js
 // 示例1
@@ -139,6 +139,43 @@ console.log('y',y)
 // output: 
 // x [ 5, 1 ]
 // y [ 5, 1 ]
+```
+### Add and delete properties
+
+```js
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = () => {
+    console.log('draw');
+  }
+}
+
+const circle = new Circle(10);
+
+//Add a property
+
+circle.location = { x: 1 };
+
+const propertyName = 'center location';
+circle[propertyName] = { x: 1};
+
+console.log(circle);
+// output: 
+// Circle {
+//   radius: 10,
+//   draw: [Function (anonymous)],
+//   location: { x: 1 },
+//   'center location': { x: 1 }
+// }
+
+delete circle.location;
+console.log(circle);
+// output: 
+// Circle {
+//   radius: 10,
+//   draw: [Function (anonymous)],
+//   'center location': { x: 1 }
+// }
 ```
 
 
