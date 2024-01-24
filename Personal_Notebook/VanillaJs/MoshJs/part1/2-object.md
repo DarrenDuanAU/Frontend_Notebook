@@ -130,7 +130,7 @@ console.log(obj);
 let x = [0, 1];
 let y = x;
 // 也是copy的地址
-// 也可以通过 let y = [...x]; 完成copy数据
+// 也可以通过 let y = [...x]; 完成copy数据，如果是这种方法copy的话，相对于x，y也是一个独立的array
 
 y[0] = 5;
 
@@ -140,8 +140,8 @@ console.log('y',y)
 // x [ 5, 1 ]
 // y [ 5, 1 ]
 ```
-### Add and delete properties
 
+### Add and delete properties
 ```js
 function Circle(radius) {
   this.radius = radius;
@@ -149,7 +149,6 @@ function Circle(radius) {
     console.log('draw');
   }
 }
-
 const circle = new Circle(10);
 
 //Add a property
@@ -157,7 +156,7 @@ const circle = new Circle(10);
 circle.location = { x: 1 };
 
 const propertyName = 'center location';
-circle[propertyName] = { x: 1};
+circle[propertyName] = { x: 1 };
 
 console.log(circle);
 // output: 
@@ -192,12 +191,21 @@ const circle = {
 // 多种获得object的key的方法
 for (let key in circle)
   console.log(key, circle[key]);
+// output:
+// redius 1
+// draw [Function: draw]
 
 for (let key of Object.keys(circle))
   console.log(key);
+// output:
+// redius
+// draw
 
 for (let entry of Object.entries(circle))
   console.log(entry);
+// output:
+// [ 'redius', 1 ]
+// [ 'draw', [Function: draw] ]
 
 if ('color' in circle) console.log('yes');
 ```
@@ -224,4 +232,82 @@ Mosh`;
 // Mosh
 
 //用templete literals可以让代码内容和输出内容格式一致（空格，换行都存在），并且还可以动态添加内容，例如名字（John）。
+```
+
+### Abstraction
+- Hide the details
+- Show the essentials
+
+### Private Properties and Methods
+
+```js
+function Circle(radius) {
+  // radius is a PUBLIC value
+  this.radius = radius;
+
+  // here the 'defaultLocation' is a PRIVATE object
+  let defaultLocation = { x: 0, y: 0 };
+ 
+  // computeOptimumLocation() is a PRIVATE function
+  let computeOptimumLocation = function(factor) {
+    // ...
+  }
+
+  // draw() is a PUBLIC method
+  this.draw =function() {
+    computeOptimumLocation(0.1);
+    // defaultLocation
+    // this.radius
+
+    console.log('draw');
+  }
+}
+
+const circle = new Circle(10);
+circle.draw();
+console.log(`the original radius: ${circle.radius}`);
+circle.radius = 1;
+console.log(`the new radius: ${circle.radius}`);
+// output:
+// draw
+// the original radius: 10
+// the new radius: 1
+```
+
+
+### Getter and Setter
+
+```js
+function Circle(radius) {
+  this.radius = radius;
+
+  let defaultLocation = { x: 0, y: 0 };
+ 
+  let computeOptimumLocation = function(factor) {
+    // ...
+  }
+  
+  this.draw =function() {
+    console.log('draw', defaultLocation);
+  }
+  Object.defineProperty(this, 'defaultLocation', {
+    get: function() {
+      return defaultLocation;
+    },
+    set: function(value) {
+      if (!value.x || ! value.y) {
+        throw new Error('invalid location.');
+      }
+      defaultLocation = value;
+    }
+  })
+}
+
+const circle = new Circle(10);
+circle.draw();
+circle.defaultLocation = { x: 1, y: 1 };
+circle.draw();
+// output:
+// draw { x: 0, y: 0 }
+// draw { x: 1, y: 1 }
 ```
