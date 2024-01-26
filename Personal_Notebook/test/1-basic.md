@@ -2,6 +2,13 @@
 
 ## basic
 
+three different test:
+- unit test (high wirte speed/high run speed/low code coverage)
+- integration test (mid wirte speed/mid run speed/mid code coverage)
+- end to end test (low wirte speed/low run speed/high code coverage)
+
+code coverage !== code assurance
+
 ```bash
 # initialize the project
 npm init -y
