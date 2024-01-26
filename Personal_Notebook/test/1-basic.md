@@ -2,6 +2,19 @@
 
 ## basic
 
+```bash
+# initialize the project
+npm init -y
+
+# install the jest
+npm --save-d jest
+
+# change the script
+test: "jest"
+# or
+test: "jest --coverage"
+```
+
 test1:
 ```js
 // sum.js
