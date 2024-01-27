@@ -47,7 +47,7 @@ setTimeout 2 ssc, test2
 
 
 例子2:
-已下是一段callback function的应用
+以下是一段callback function的应用
 
 ``` javaScript
 console.log('start')
@@ -61,14 +61,15 @@ setTimeout(() => {
 }, 0)
 
 console.log('finished!')
+// output:
+
+// start
+// finished
+// zero seconds
+// two secondes
 ```
 
-the output as follows:
-
-start
-finished
-zero seconds
-two secondes
+![Alt Text](./assets//callback.png)
 
 
 
