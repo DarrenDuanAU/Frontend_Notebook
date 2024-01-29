@@ -1,7 +1,21 @@
 # CSR, SSR, SSG
 
 ![Alt Text](./assets//image1.png)
+***
 
-FCP代表“首次内容绘制”（First Contentful Paint）。它是Web性能指标之一，用于衡量从用户发起导航请求到浏览器首次在屏幕上呈现任何页面内容的时间。具体来说，FCP标志着页面上的第一个元素（如文本、图像等）何时被浏览器绘制出来。
+CSR的痛点：
 
-FCP是用户体验的关键指标之一，因为它反映了用户在页面加载过程中首次看到有意义内容的时间。较短的FCP通常与更好的用户体验和更高的用户满意度相关。在Web性能优化中，开发人员通常会尝试减少FCP时间，以提高页面加载速度。
+- FCP代表“首次内容绘制”（First Contentful Paint），很多时候在FCP时间点上，因为没有fetch到后端的数据，我们只能有部分页面展示，或者更现代的做法是一个loading页面。
+
+- 所以CSR，会让SEO（类似于Google爬虫比较困惑），因为前后端分离，爬虫爬到前端内容里面不含有真的信息，只有一个template。
+- 首屏性能不好： CSR初始化页面会出现白屏，因为CSR的加载一般需要3个HTTP生命周期：加载HTML -> 加载js文件 -> API请求数据-> 根据数据渲染页面
+
+***
+![Alt Text](./assets//image2.png)
+***
+
+![Alt Text](./assets//image3.png)
+***
+
+![Alt Text](./assets//image4.png)
+***
