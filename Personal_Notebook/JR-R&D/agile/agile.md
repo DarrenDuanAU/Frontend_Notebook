@@ -11,13 +11,12 @@
 - End of Life (EOL)
 
 ***
-
 ![Alt Text](./assets//image1.png)
 
 ***
-
 ![Alt Text](./assets//image2.png)
 
 ***
-
 ![Alt Text](./assets//image3.png)
+
+***
