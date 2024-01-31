@@ -4,6 +4,7 @@
   - resource intensive
   - No SEO
   - Less secure
+
 - Server-side Rendering
   - Smaller bundles
   - Resource efficient
