@@ -311,3 +311,40 @@ circle.draw();
 // draw { x: 0, y: 0 }
 // draw { x: 1, y: 1 }
 ```
+
+
+### Other way to make object
+
+```js
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  makeSound() {
+    console.log("Some generic sound");
+  }
+}
+
+// 使用类创建对象
+const myAnimal = new Animal("My Animal");
+console.log(myAnimal.name); // 输出: My Animal
+myAnimal.makeSound(); // 输出: Some generic sound
+
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name);
+    this.breed = breed;
+  }
+
+  makeSound() {
+    console.log("Woof! Woof!");
+  }
+}
+
+const myDog = new Dog("Buddy", "Golden Retriever");
+console.log(myDog.name); // 输出: Buddy
+console.log(myDog.breed); // 输出: Golden Retriever
+myDog.makeSound(); // 输出: Woof! Woof!
+```
