@@ -312,6 +312,7 @@ circle.draw();
 // draw { x: 1, y: 1 }
 ```
 
+## 课后自己补充的笔记：
 
 ### Other way to make object
 
@@ -347,4 +348,57 @@ const myDog = new Dog("Buddy", "Golden Retriever");
 console.log(myDog.name); // 输出: Buddy
 console.log(myDog.breed); // 输出: Golden Retriever
 myDog.makeSound(); // 输出: Woof! Woof!
+```
+
+
+### 箭头函数与function有一定区别
+
+```js
+// 例子1:
+function Animal (name) {
+  this.name = 'this animal ' + name 
+  this.makeSound = function() {
+    console.log('animal make sound!', this.name)
+  }
+}
+const animal1 = new Animal('cat');
+console.log(animal1.name);
+animal1.makeSound();
+```
+
+```js
+// 例子2:
+const Animal = (name) => {
+  this.name = 'this animal ' + name 
+  this.makeSound = function() {
+    console.log('animal make sound!', this.name)
+  }
+}
+const animal2 = new Animal('cat');
+console.log(animal2.name);
+animal2.makeSound();
+```
+
+在JavaScript中，使用函数构造器（function constructor）来创建类是一种常见的模式。在你的第一个例子中，使用了函数构造器来创建一个名为Animal的类。函数构造器内部使用了this关键字，这允许你通过new关键字调用该函数，创建一个新的实例，并将属性和方法添加到这个实例上。这是传统的JavaScript类的创建方式。
+
+在你的第二个例子中，使用了箭头函数来创建一个名为Animal的类。箭头函数有一个重要的特性，即它们没有自己的this上下文，而是继承自外围作用域。这就是为什么在箭头函数内部使用this时，它指向的是外部的this，而不是新创建的实例。
+
+因此，当你使用箭头函数时，无法通过new关键字来调用它并创建一个类的实例。箭头函数不适用于创建类，因为它们的this行为与传统的构造函数不同。
+
+如果你想使用箭头函数来创建类，你可以考虑使用ES6的class语法，它提供了更清晰、更易读的类定义方式。以下是一个使用class语法的例子：
+
+```js
+class Animal {
+  constructor(name) {
+    this.name = 'this animal ' + name;
+  }
+
+  makeSound() {
+    console.log('animal make sound!', this.name);
+  }
+}
+
+const myAnimal = new Animal('Example');
+myAnimal.makeSound();
+
 ```
