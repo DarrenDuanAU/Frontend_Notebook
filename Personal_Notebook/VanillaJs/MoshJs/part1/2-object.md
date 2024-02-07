@@ -400,5 +400,4 @@ class Animal {
 
 const myAnimal = new Animal('Example');
 myAnimal.makeSound();
-
 ```
