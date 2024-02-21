@@ -1,7 +1,7 @@
 ## Question
 
 ## Front-end questions
-- Batch update(查一下)
+课后（查一下 Batch update）
 - 内置hooks有哪些？你用过哪些。
   - useState:
   - useEffect: 3 states
@@ -20,3 +20,13 @@
 
 - what os JWT? and what is the use case of this?
   - answer: JWT is Json web token, store JWT in local-storage and attach to header to send request.
+  - 课后：（JWT一共包括3部分，查一下什么是JWT）
+
+- what is dependency injection? / Circular dependency
+
+
+## Cloud Questions
+
+- what is serverless?
+
+- what is AWS lambda cold start issue?
