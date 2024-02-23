@@ -30,3 +30,13 @@
 - what is serverless?
 
 - what is AWS lambda cold start issue?
+
+
+## comprehensive questions
+
+- what is XSS attack and how to protect it in the front-end and back-end?
+  - answer: XSS(cross site script) get Localstore/cookie.get(token) -> send to hacker
+  - solution: 
+    - frontend: react.js built-in virtual dom -> real dom (天然保护)
+    - backend: set cookies with httpOnly.
+- what happened when user inputs a URL in the browser?
