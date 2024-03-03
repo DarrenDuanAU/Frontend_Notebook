@@ -1,5 +1,4 @@
-# React related questions
-
+# Frontend related questions
 ## Terms
 
 ### React
