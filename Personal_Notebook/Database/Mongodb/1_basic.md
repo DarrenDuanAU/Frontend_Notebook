@@ -20,6 +20,15 @@ mongosh
 ```
 #### Mongo shell cheating sheet
 
+show all databases
+```zsh
+show dbs
+```
+
+use database
+```zsh
+use <db-name>
+```
 
 
 
