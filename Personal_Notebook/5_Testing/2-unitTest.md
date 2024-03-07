@@ -28,7 +28,7 @@ afterEach(() => {
   cleanup();
 })
 
-test('should reder non-completed todo',() => {
+test('should render non-completed todo',() => {
   const todo = { id: 1, title: 'wash dishes', completed: false, }
   render(<Todo todo={todo}/>);
   const todoElement = screen.getByTestId('todo-1');
@@ -39,7 +39,7 @@ test('should reder non-completed todo',() => {
   expect(innerHTML).not.toContain('<strike>');
 })
 
-test('should reder completed todo',() => {
+test('should render completed todo',() => {
   const todo = { id: 2, title: 'wash car', completed: true, }
   render(<Todo todo={todo}/>);
   const todoElement = screen.getByTestId('todo-2');
