@@ -1,6 +1,12 @@
-# Mongodb 
+# MongoDB
 
 ## Basics
+
+### up-level understanding
+
+在关系行数据库（类似于PostgreSQL），database中是table，table中column。类似于关系型数据库，在mongoDB中，database中有collection，collection中有document。
+
+
 
 ### commands
 
@@ -20,17 +26,56 @@ mongosh
 ```
 #### Mongo shell cheating sheet
 
-show all databases
+清除屏幕
 ```zsh
-show dbs
+test> cls
 ```
 
-use database
+跳出mongoDB
 ```zsh
-use <db-name>
+test> exit
 ```
 
+显示所有database。
+```zsh
+test> show dbs
+```
 
+进入这个database，如果没有这个database不存在，我们会创建一个新的database，并进入。
+```zsh
+test> use <db-name>
+```
+例如，创建并进入一个appdb的database。
+```zsh
+test> use appdb
+```
+
+在一个database中，显示所有collections。
+```zsh
+appdb> show collections
+```
+
+在一个database中，删除所在的database (在mongoDB中有很多这种类似于JavaScript的格式的语句)
+```zsh
+appdb> db.dropDatabase()
+```
+
+就像是在Js中一样，在mongoDB中，你不必创建一个collection，如果一个collection不存在，你直接在一个collection中创建一个document，这个collection就被创建了。
+
+在database（appdb）中创建一个collection（users），并添加一个document（{ name: "John"})
+```zsh
+appdb> db.users.insertOne({ name: "John" })
+```
+
+显示特定collection内的内容
+```zsh
+appdb> db.users.find()
+```
+
+创建另一个document
+```zsh
+appdb> db.users.insertOne({ name: "Sally", age: 19, address: { street: ""987 North St}, hobbies: ["Running"] })
+```
 
 
 
