@@ -26,6 +26,7 @@ mongosh
 ```
 #### Mongo shell cheating sheet
 
+进入mongo shell后，我们默认进入test database。
 清除屏幕
 ```zsh
 test> cls
@@ -62,6 +63,7 @@ appdb> db.dropDatabase()
 
 就像是在Js中一样，在mongoDB中，你不必创建一个collection，如果一个collection不存在，你直接在一个collection中创建一个document，这个collection就被创建了。
 
+
 在database（appdb）中创建一个collection（users），并添加一个document（{ name: "John"})
 ```zsh
 appdb> db.users.insertOne({ name: "John" })
@@ -75,6 +77,16 @@ appdb> db.users.find()
 创建另一个document
 ```zsh
 appdb> db.users.insertOne({ name: "Sally", age: 19, address: { street: ""987 North St}, hobbies: ["Running"] })
+```
+
+一次性添加多个document
+```zsh
+appdb> db.users.insertMany([{ name: "Jill" },{ name: "Mike" }])
+```
+
+获取数据（find())，排序(sort({ age: 1, name: -1 }) 就是先按age顺序排序，然后按name倒叙排序)，跳过第一个(skip(1))，限制展示(limit(2))。
+```zsh
+appdb> db.users.find().sort({ age: 1, name: -1 }).skip(1).limit(2)
 ```
 
 
