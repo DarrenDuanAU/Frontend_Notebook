@@ -6,8 +6,6 @@
 
 在关系行数据库（类似于PostgreSQL），database中是table，table中column。类似于关系型数据库，在mongoDB中，database中有collection，collection中有document。
 
-
-
 ### commands
 
 start the mongodb services
@@ -89,6 +87,21 @@ appdb> db.users.insertMany([{ name: "Jill" },{ name: "Mike" }])
 appdb> db.users.find().sort({ age: 1, name: -1 }).skip(1).limit(2)
 ```
 
+寻找一个特定的document, 可以用find(),并添加一个限制条件。
+```zsh
+appdb> db.users.find({ age: 26 })
+```
+
+如果我们只想要展示其中一个部分，我们需要添加第二个parameters ({ name: 1, age: 1, _id: 0}, 意思是展示 name和age但是不要展示 _id)
+```zsh
+appdb> db.users.find({ name: "Kyle" }, { name: 1, age: 1, _id: 0})
+```
+
+here are some complex query:
+寻找collection中不含有age的document。
+```zsh
+appdb> db.users.find({ age: { $exists: false} })
+```
 
 
 
