@@ -4,7 +4,11 @@
 
 ### up-level understanding
 
-在关系行数据库（类似于PostgreSQL），database中是table，table中column。类似于关系型数据库，在mongoDB中，database中有collection，collection中有document。
+- 在关系行数据库（类似于PostgreSQL），database中是table，table中column。类似于关系型数据库，在mongoDB中，database中有collection，collection中有document。
+
+- mongos, mongod, mongo, mongosh的区别：
+https://www.helenjoscott.com/2022/01/29/mongod-mongo-mongosh-mongos-what-now/
+
 
 ### commands
 
