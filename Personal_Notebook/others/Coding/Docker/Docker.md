@@ -27,6 +27,17 @@ Docker helps consistently build, run and ship our applications.
 
 ## Docker如何工作？
 
-我们可以通过在文件中添加一个Dockerfile，通过Dockerfile我们可以打包我们文件中的所有文件，并且所有的dependencies，然后创建一个image，我们可以上传这个image到Docker Hub（类似于GitHub），这样只要有人可以下载我们的Docker image，他就可以在自己的的local device上面运行相同的app了。
+我们可以通过在文件中添加一个Dockerfile，通过Dockerfile我们可以打包我们文件中的所有文件并且指明我们的环境要求，然后创建一个image，image可以在container中运行，我们也可以上传这个image到Docker Hub（类似于GitHub），这样只要有人可以下载我们的Docker image，他就可以在自己的的local device上面通过container运行相同的app了。
+
+这大大简化了新加入的developer set up environment的时间，如果没有Docker，可以我们需要很长的Document，新加入的developer需要按照步骤一步一步的配置环境，一旦出错，可能都无法运行app。
+
+Dockerfile中包含：
+- A cut-time OS
+- A runtime environment (eg Node)
+- Application files
+- Third-party libraries
+- Environment variable
+
+
 
 
