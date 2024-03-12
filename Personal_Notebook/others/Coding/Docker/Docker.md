@@ -22,4 +22,11 @@ Docker helps consistently build, run and ship our applications.
     - 启动特别快
     - 需要特别少的硬件资源
 
-    
+  - 本质上说，Container是一种process，因为Container的设计是一种client-server的架构，这里的client就是container，而server就是操作系统的核心（kernel），windows的kennel是（windows和Linux），Linux的kernel是Linux，而Mac的kernel是Linux VM（因为Mac不提供container服务）。
+
+
+## Docker如何工作？
+
+我们可以通过在文件中添加一个Dockerfile，通过Dockerfile我们可以打包我们文件中的所有文件，并且所有的dependencies，然后创建一个image，我们可以上传这个image到Docker Hub（类似于GitHub），这样只要有人可以下载我们的Docker image，他就可以在自己的的local device上面运行相同的app了。
+
+
