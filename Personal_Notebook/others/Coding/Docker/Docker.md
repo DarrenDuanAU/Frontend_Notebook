@@ -99,6 +99,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 EXPOSE 3000
+# 在前端 Container内部监听 3000端口（这里不涉及映射关系，也不会暴露端口，映射关系在docker-compose中设置）
 CMD ["npm", "start"]
 ```
 
@@ -122,6 +123,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
+    # 端口映射关系
       - "3000:3000"
     depends_on:
       - mongodb
@@ -132,13 +134,16 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    # 端口映射关系
     depends_on:
       - mongodb
 
   mongodb:
     image: mongo:latest
+    # 在Docker Hub上 pull 最新的mongodb的image作为数据库
     ports:
       - "27017:27017"
+    # 端口映射关系
 ```
 
 在项目根目录执行以下命令启动容器，就会启动前端、后端和数据库的容器，并且它们可以相互通信：
@@ -150,3 +155,19 @@ docker-compose up
 ```bash
 docker-compose down
 ```
+
+### Docker Network
+
+`docker-compose up`命令会默认创建一个新的 Docker 网络，并将所有相关的容器连接到这个网络上，我们可以通过使用命令行`docker network ls`发现。这是因为 Docker Compose 旨在管理多个相关的容器，并确保它们可以相互通信。
+
+使用一个独立的网络对于多容器应用程序来说是非常有用的，因为它可以提供以下几个好处：
+
+隔离性: 每个 Docker 网络都是一个独立的网络命名空间，容器在网络内部进行通信，与外部网络隔离。这样可以减少意外的网络干扰和冲突。
+
+命名解析: Docker 网络提供了内置的 DNS 服务，允许容器之间使用容器名称而不是 IP 地址进行通信。这样可以简化配置并提高可维护性。
+
+安全性: 通过将相关容器连接到同一个网络，可以更容易地控制容器之间的通信，实现网络安全策略。
+
+方便性: Docker Compose 可以自动管理网络配置，包括 IP 地址分配、子网配置等，简化了网络配置的管理和维护。
+
+因此，当你使用 docker-compose up 启动多个相关的容器时，Docker Compose 会默认创建一个新的网络，并将所有相关容器连接到这个网络上，以确保它们可以相互通信并且在一个独立的网络环境中运行。
