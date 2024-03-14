@@ -1,0 +1,4 @@
+# Memo
+
+- mongo compass
+- kubernetes
