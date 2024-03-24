@@ -26,8 +26,21 @@ $git stash pop 弹出最近抽屉内的代码
 我们到master-branch上，然后输入$git merge <target.branch.name>，我们就把<target.branch.name> merge到master-branch上了
 
 ### 22/05/2023
-Git分为：工作区，缓存区（staged changes），repo。三个区域。
-一般通过git status检查工作区内和缓存区内有什么文件。通过git add把文件从工作区放入缓存区，然后通过git commit把文件从缓存区存入repo。这个也可以在vscode内的source control来看。
+Git分为四个区域：
+- 工作区（work space）
+- 缓存区（staged changes）
+- 本地仓库（local repo）
+- 远程仓库（remote repo）
+
+注意：
+- 本地仓库（local repo）包含本地分支（branchs）和远程分支（remote branchs），这里的的远程分支不会自动的和远程仓库的分支更新（更新需要用git fetch/git pull）
+- 远程仓库（remote repo）只包含远程分支（如果要更新远程分支 -- 把本地分支推送到远程分支上，使用git push）
+
+#### git status && git add && git commit
+一般通过git status检查工作区内和缓存区内有什么文件。通过git add把文件从工作区（work space）放入缓存区（stage/index changes），然后通过git commit把文件从缓存区存入本地仓库（local repo）。这个也可以在vscode内的source control来看。
+
+### git fetch && git pull
+git fetch会把远程仓库（remote repo）的内容下载到本地仓库（local repo）的远程分支（remote branchs）上（也就是更新了本地仓库的远程分支，git pull = git fetch （更新本地的远程分支）后运行，git merge 或者 git rebase（合并远程分支和本地分支），如果发生冲突，Git 会将冲突的文件标记为冲突状态，并将冲突的内容展示在工作区中的文件中。这样你可以手动解决冲突，并将修改后的文件重新添加到暂存区，然后完成合并提交。
 
 #### 误删：
 - 本身checkout就是还原到最近commit的版本，所以当我们误删了文件x后，我们可以用git checkout — <x>就可以让文件重新还原。
