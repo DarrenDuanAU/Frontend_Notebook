@@ -11,8 +11,8 @@ how to chose a region?
 
 ### AWS Availability Zones
 
-![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/demo-images/aws-availability-zones.png)
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/Personal_Notebook/cloud/aws/udemy/images/aws-availability-zones.jpg)
 
 ### AWS Points of Presence (Edege Locations)
 
-![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/demo-images/aws-points-of-presence.png)
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/Personal_Notebook/cloud/aws/udemy/images/aws-points-of-presence.jpg)

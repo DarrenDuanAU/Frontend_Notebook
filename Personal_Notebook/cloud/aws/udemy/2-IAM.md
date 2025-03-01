@@ -7,8 +7,8 @@
 常见问题：
 
 - 在登陆的时候就可以选，是登录 root account 还事登录 IAM user account，当登录 root account 会显示 account id，当登录 IAM user 的时候除了显示它所属的 root account 的 account id 还会显示 IAM user 的 name。
-  ![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/demo-images/aws-availability-zones.png)
+  ![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/Personal_Notebook/cloud/aws/udemy/images/iam-user-and-groups.jpg)
 
 ### IAM Policies Structure
 
-![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/demo-images/aws-availability-zones.png)
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/Personal_Notebook/cloud/aws/udemy/images/iam-permissions.jpg)
