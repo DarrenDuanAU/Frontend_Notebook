@@ -77,6 +77,31 @@ IPv6 is newer and solves problems for internet of Things(IoT).
   - 是 VPC 默认创建的，表示子网之间互通
   - 所有子网都默认有 10.0.0.0/16 → local 这条规则
 
+## 名次解释
+
+物理层面概念：
+
+- Region 区域 （是 AWS 的物理地理区域，代表一个城市或国家级别的 AWS 数据中心集群，例如澳洲悉尼有一个数据 aws 数据中心集群，悉尼就是一个 aws region，代号 ap-southeast-2，一个 Region 通常包含多个 Availability Zones（AZ））
+  - 是 AWS 的物理地理区域，代表一个城市或国家级别的 AWS 数据中心集群，例如澳洲悉尼有一个数据 aws 数据中心集群，悉尼就是一个 aws region，代号 ap-southeast-2。
+  - 一个 Region 通常包含多个 Availability Zones（AZ）。
+- Availability Zone（AZ）可用区
+  - 是同一个 Region 内物理隔离的独立数据中心或数据中心组，在一个区域 Region 内通常有 3 个 AZ 可用区，例如 ap-southeast-2a，ap-southeast-2b，ap-southeast-2c，就是悉尼区 ap-southeast-2 的 3 个可用区
+  - 这些 AZ 彼此供电/冷却/网络完全独立，但通过高速连接实现低延迟通信
+  - AZ 是实现高可用部署的核心单位。
+
+虚拟概念：
+
+- Virtual Private Cloud(VPC) 虚拟私有云
+  - 是你在 AWS 上创建的逻辑隔离的私有网络环境。
+  - 你可以自定义 IP 范围（如 10.0.0.0/16），并在其中创建子网、绑定安全组、配置路由等。
+  - 一个 VPC 必须部署在一个 Region 内，不能跨 Region，但可以跨多个 AZ。
+  - VPC 是逻辑虚拟层面的资源，但与 Region（物理）绑定。
+- Subnet 子网（一个子网只能在一个 AZ 中）
+  - 是 VPC 中的一个小网段（例如 10.0.1.0/24），表示你对 IP 空间的进一步划分。
+  - 你通常会按功能和可用区划分子网：例如：1，Public 子网（放 ALB/前端。 2，Private 子网（放后端/数据库）
+  - 一个子网只能位于一个 AZ 内。
+  - Subnet 是虚拟资源，但必须指定在某个 AZ（物理）中。
+
 ## 其他：
 
 EC2 命名规则：
