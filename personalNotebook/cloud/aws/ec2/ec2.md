@@ -47,6 +47,23 @@ IPv6 is newer and solves problems for internet of Things(IoT).
 ![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/ip.png)
 ![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/ip-2.png)
 
+举例说明 IP 在 aws 中的应用：
+
+例如一个前端+后端+数据库，前后端分离的经典架构。
+前端有一个 public IP，被部署在一个 Public 子网 A。
+后端和数据库部署在一个 Private 子网 B，后端和数据库通过 Private IP 通信。
+外网通过 Application Load Balancer 负载均衡器 （ALB）来访问后端。
+
+- 前端（一个 Public IP）
+- ALB（一个 Public IP-对外网，收到请求转发给后端）
+- 后端（一个 Private IP 用于接受 ALB 的请求）
+- 数据库（一个 Private IP 用于接受后端请求）
+
+子网名称 | 子网用途 | 路由表名称 | 路由规则
+Public Subnet | ALB + 前端 | Public-RT | - 10.0.0.0/16 → local- 0.0.0.0/0 → Internet Gateway (IGW)
+Private Subnet A | 后端服务 | Private-RT-A | - 10.0.0.0/16 → local- 0.0.0.0/0 → NAT Gateway（可选）
+Private Subnet B | 数据库 | Private-RT-B | - 10.0.0.0/16 → local（❌ 不配置出网）
+
 ## 其他：
 
 EC2 命名规则：
