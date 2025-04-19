@@ -54,11 +54,6 @@ IPv6 is newer and solves problems for internet of Things(IoT).
 后端和数据库部署在一个 Private 子网 B，后端和数据库通过 Private IP 通信。
 外网通过 Application Load Balancer 负载均衡器 （ALB）来访问后端。
 
-- 前端（一个 Public IP）
-- ALB（一个 Public IP-对外网，收到请求转发给后端）
-- 后端（一个 Private IP 用于接受 ALB 的请求）
-- 数据库（一个 Private IP 用于接受后端请求）
-
 | 子网名称         | 子网用途   | 路由表名称     | 路由规则                                                              |
 | ---------------- | ---------- | -------------- | --------------------------------------------------------------------- |
 | Public Subnet    | ALB + 前端 | `Public-RT`    | - `10.0.0.0/16` → `local`<br>- `0.0.0.0/0` → `Internet Gateway (IGW)` |
