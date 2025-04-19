@@ -15,4 +15,4 @@ how to chose a region?
 
 ### AWS Points of Presence (Edege Locations)
 
-![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/Personal_Notebook/cloud/aws/udemy/images/aws-points-of-presence.jpg)
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/udemy/images/aws-points-of-presence.jpg)
