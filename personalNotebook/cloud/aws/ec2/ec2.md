@@ -20,6 +20,21 @@ EC2 可以根据不同的 CPU，Mem，Storage，Network, firewall, roles 等配�
 
 ## EC2 & Security Group
 
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/intro.png)
+
+- Security Group 实际上是运行在 EC2 instance 的外面的，类似于一种防火墙
+- EC2 instance 和 Security Group 的关系是 many-to-many 的关系 （一个 EC2 instance 可以有多个不同的 Security Group，一个 Security Group 也可以对应多个 EC2 instance），实际上 EC2 instance 和 Security Group 都是 AWS 的资源对象，他们可以被产生出来，可以通过配置，把它们关联起来（attach），这有点像组合关系。
+
+案例 1:
+Security Group 可以根据设置拦截特定要求的请求（比如 IP，授权规则等）：
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/example-1.png)
+
+案例 2:
+Security Group 可以根据设置来自其他 EC2 instance 的请求（比如一个 EC2 instance 的 Security Group 是 Security Group 1/Security Group 2，我们就允许它的请求进入，但是如果是 Security Group 3 就不让他进入）：
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/example-2.png)
+
+- 默认情况下，拦截所有 inbound traffic，允许所有 outbound traffic。
+
 ## 其他：
 
 EC2 命名规则：
