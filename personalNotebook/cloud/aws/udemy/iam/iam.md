@@ -8,10 +8,10 @@
 常见问题：
 
 - 在登陆的时候就可以选，是登录 root account 还事登录 IAM user account，当登录 root account 会显示 account id，当登录 IAM user 的时候除了显示它所属的 root account 的 account id 还会显示 IAM user 的 name。
-  ![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/udemy/images/iam-user-and-groups.jpg)
+  ![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/udemy/iam/iam-user-and-groups.jpg)
 
 ### IAM Policies Structure
 
 - 我们可以 assign 一个 policy 给 user 或者 group，这个 policy 可以定义这个 user 或者这个 group 的人做什么。
 
-![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/udemy/images/iam-permissions.jpg)
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/udemy/iam/iam-permissions.jpg)

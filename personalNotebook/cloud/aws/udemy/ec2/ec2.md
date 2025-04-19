@@ -18,6 +18,8 @@ EC2 可以根据不同的 CPU，Mem，Storage，Network, firewall, roles 等配�
 - Memory Optinized: 记忆密集型 (常常用来做数据相关工作，数据操作，数据分析，数据可视化等)
 - Storage Optimized: 数据存储密集型（数据仓库，文件分发等）
 
+## EC2 & Security Group
+
 ## 其他：
 
 EC2 命名规则：
