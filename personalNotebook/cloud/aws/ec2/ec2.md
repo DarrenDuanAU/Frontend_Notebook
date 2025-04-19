@@ -102,6 +102,7 @@ IPv6 is newer and solves problems for internet of Things(IoT).
   - 一个子网只能位于一个 AZ 内。
   - Subnet 是虚拟资源，但必须指定在某个 AZ（物理）中。
 
+```bash
 Region（物理）📍
 │
 ├── AZ a（物理）───┐
@@ -111,6 +112,7 @@ Region（物理）📍
 ├── AZ c（物理）───┐
 │ └── Subnet-C（虚拟）
 └── VPC（逻辑网络，覆盖所有子网）
+```
 
 ## 其他：
 
