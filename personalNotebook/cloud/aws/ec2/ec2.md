@@ -81,7 +81,7 @@ IPv6 is newer and solves problems for internet of Things(IoT).
 
 物理层面概念：
 
-- Region 区域 （是 AWS 的物理地理区域，代表一个城市或国家级别的 AWS 数据中心集群，例如澳洲悉尼有一个数据 aws 数据中心集群，悉尼就是一个 aws region，代号 ap-southeast-2，一个 Region 通常包含多个 Availability Zones（AZ））
+- Region 区域
   - 是 AWS 的物理地理区域，代表一个城市或国家级别的 AWS 数据中心集群，例如澳洲悉尼有一个数据 aws 数据中心集群，悉尼就是一个 aws region，代号 ap-southeast-2。
   - 一个 Region 通常包含多个 Availability Zones（AZ）。
 - Availability Zone（AZ）可用区
@@ -89,7 +89,7 @@ IPv6 is newer and solves problems for internet of Things(IoT).
   - 这些 AZ 彼此供电/冷却/网络完全独立，但通过高速连接实现低延迟通信
   - AZ 是实现高可用部署的核心单位。
 
-虚拟概念：
+虚拟层面概念：
 
 - Virtual Private Cloud(VPC) 虚拟私有云
   - 是你在 AWS 上创建的逻辑隔离的私有网络环境。
