@@ -65,6 +65,23 @@ IPv6 is newer and solves problems for internet of Things(IoT).
 | Private Subnet A | 后端服务   | `Private-RT-A` | - `10.0.0.0/16` → `local`<br>- `0.0.0.0/0` → `NAT Gateway`（可选）    |
 | Private Subnet B | 数据库     | `Private-RT-B` | - `10.0.0.0/16` → `local`（❌ 不配置出网）                            |
 
+💡 补充说明
+
+- Internet Gateway（IGW）
+
+  - 附加在 VPC 上
+  - 必须存在，才允许 Public 子网中的资源访问或被访问于公网
+
+- NAT Gateway
+
+  - 通常部署在 Public 子网中
+  - 允许 Private 子网中的实例访问外网（比如拉取依赖、发 API 请求），但不允许外部主动连接它们
+  - 比如你部署的后端服务可能要访问 Stripe、S3 等外部服务
+
+- local 路由
+  - 是 VPC 默认创建的，表示子网之间互通
+  - 所有子网都默认有 10.0.0.0/16 → local 这条规则
+
 ## 其他：
 
 EC2 命名规则：
