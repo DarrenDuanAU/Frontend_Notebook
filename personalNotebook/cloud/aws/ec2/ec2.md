@@ -59,10 +59,11 @@ IPv6 is newer and solves problems for internet of Things(IoT).
 - 后端（一个 Private IP 用于接受 ALB 的请求）
 - 数据库（一个 Private IP 用于接受后端请求）
 
-子网名称 | 子网用途 | 路由表名称 | 路由规则
-Public Subnet | ALB + 前端 | Public-RT | - 10.0.0.0/16 → local- 0.0.0.0/0 → Internet Gateway (IGW)
-Private Subnet A | 后端服务 | Private-RT-A | - 10.0.0.0/16 → local- 0.0.0.0/0 → NAT Gateway（可选）
-Private Subnet B | 数据库 | Private-RT-B | - 10.0.0.0/16 → local（❌ 不配置出网）
+| 子网名称         | 子网用途   | 路由表名称     | 路由规则                                                              |
+| ---------------- | ---------- | -------------- | --------------------------------------------------------------------- |
+| Public Subnet    | ALB + 前端 | `Public-RT`    | - `10.0.0.0/16` → `local`<br>- `0.0.0.0/0` → `Internet Gateway (IGW)` |
+| Private Subnet A | 后端服务   | `Private-RT-A` | - `10.0.0.0/16` → `local`<br>- `0.0.0.0/0` → `NAT Gateway`（可选）    |
+| Private Subnet B | 数据库     | `Private-RT-B` | - `10.0.0.0/16` → `local`（❌ 不配置出网）                            |
 
 ## 其他：
 
