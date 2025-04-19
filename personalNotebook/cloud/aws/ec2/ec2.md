@@ -44,8 +44,8 @@ example:
 
 IPv4 is still the most common format used online.
 IPv6 is newer and solves problems for internet of Things(IoT).
-![ipv4-ipv6](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/ip.png)
-![public-and-private-ip](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/ip-2.png)
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/ip.png)
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/ip-2.png)
 
 举例说明 IP 在 aws 中的应用：
 
@@ -102,7 +102,17 @@ IPv6 is newer and solves problems for internet of Things(IoT).
   - 一个子网只能位于一个 AZ 内。
   - Subnet 是虚拟资源，但必须指定在某个 AZ（物理）中。
 
-![concept explanation](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/concept.png)
+```bash
+Region（物理）📍
+│
+├── AZ a（物理）───┐
+│                └── Subnet-A（虚拟）
+├── AZ b（物理）───┐
+│                └── Subnet-B（虚拟）
+├── AZ c（物理）───┐
+│                └── Subnet-C（虚拟）
+└──-------------- VPC（逻辑网络，覆盖所有子网）
+```
 
 ## 其他：
 
