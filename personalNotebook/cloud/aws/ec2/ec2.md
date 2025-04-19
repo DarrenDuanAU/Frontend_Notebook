@@ -35,6 +35,18 @@ Security Group 可以根据设置来自其他 EC2 instance 的请求（比如一
 
 - 默认情况下，拦截所有 inbound traffic，允许所有 outbound traffic。
 
+# Private vs Public IP (IPv4)
+
+example:
+
+- IPv4: 1.160.10.240
+- IPv6: 1900:4545:3:200:f8ff:fe21:67cf
+
+IPv4 is still the most common format used online.
+IPv6 is newer and solves problems for internet of Things(IoT).
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/ip.png)
+![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/ip-2.png)
+
 ## 其他：
 
 EC2 命名规则：
