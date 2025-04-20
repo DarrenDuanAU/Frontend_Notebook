@@ -85,9 +85,13 @@ IPv6 is newer and solves problems for internet of Things(IoT).
   - 是 AWS 的物理地理区域，代表一个城市或国家级别的 AWS 数据中心集群，例如澳洲悉尼有一个数据 aws 数据中心集群，悉尼就是一个 aws region，代号 ap-southeast-2。
   - 一个 Region 通常包含多个 Availability Zones（AZ）。
 - Availability Zone（AZ）可用区
+
   - 是同一个 Region 内物理隔离的独立数据中心或数据中心组，在一个区域 Region 内通常有 3 个 AZ 可用区，例如 ap-southeast-2a，ap-southeast-2b，ap-southeast-2c，就是悉尼区 ap-southeast-2 的 3 个可用区
   - 这些 AZ 彼此供电/冷却/网络完全独立，但通过高速连接实现低延迟通信
   - AZ 是实现高可用部署的核心单位。
+
+- Partition 分区（在 Placement Group 中）
+  - 是 AZ 内部的更小的硬件分组 —— 通常对应一个或一组物理机架（rack）。每个 Partition 有自己独立的电源、网络、硬件资源，与其他 Partition 保证物理隔离。在一个 Partition Placement Group 中，你最多可以有 7 个 Partition（默认），每个 Partition 可以部署一组实例。
 
 虚拟层面概念：
 
@@ -113,6 +117,21 @@ Region（物理）📍
 │                └── Subnet-C（虚拟）
 └──-------------- VPC（逻辑网络，覆盖所有子网）
 ```
+
+## Placement Groups
+
+AWS 提供的一种机制，用于控制多个 EC2 实例在底层物理硬件上的部署方式，以实现特定目标：高性能、低延迟、或高可用性。
+
+- Cluster: 所有实例被部署在同一个 AZ 内、尽可能靠近的物理主机上。
+  - 优点：1，非常低的网络延迟，2，非常高的网络吞吐量（特别适合实例间频繁通信）
+  - 缺点：1，不太容错（如果集群所在硬件挂了，整个服务都可能受影响）
+  - 💡 适合：高性能计算（HPC）、大规模训练任务、分布式内存数据库等
+- Spread: 每个实例都部署在不同的底层物理主机/机架上，甚至不同 AZ。
+  - 优点：高容错能力，任何一台主机故障不会影响其他实例
+  - 限制：在同一个 AZ 中最多放 7 个实例
+  - 💡 适合：前端 Web 节点、高可用主机、主备数据库等
+- Partition: 你定义分区数量（比如 3 个分区），AWS 会把实例均匀分布到不同的分区（每个分区使用独立硬件）。如果一个分区出故障，其他分区不受影响。适合需要节点分区逻辑的分布式系统。
+  - 💡 适合：Kafka、Hadoop、Cassandra、Elasticsearch 等分布式服务
 
 ## 其他：
 
