@@ -7,8 +7,8 @@ example:
 
 IPv4 is still the most common format used online.
 IPv6 is newer and solves problems for internet of Things(IoT).
-![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/ip.png)
-![alt text](https://github.com/DarrenDuanAU/Frontend_Notebook/blob/main/personalNotebook/cloud/aws/ec2/ip-2.png)
+![alt text](./ip.png)
+![alt text](./ip-2.png)
 
 举例说明 IP 在 aws 中的应用：
 
