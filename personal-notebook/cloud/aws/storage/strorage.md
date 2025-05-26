@@ -17,6 +17,11 @@ snowball 主要就是给你邮寄一个硬件， 你可以直接把数据存在�
 
 # Amazon FSx
 
+Amazon FSx 和 S3 的异同：
+
+- Amazon FSx 不同于 S3 服务，S3 只能通过上传和下载来控制你的文件存储，但是 FSx 实际上给你提供了一个文件管理系统，可以像磁盘一样使用，支持读写、权限、目录结构。
+- S3 可以使用的协议是：RESTful API（HTTP PUT/GET/DELETE），但是 Amazon FSx 可以使用的协议有很多，包括 SMB、NFS、iSCSI、Lustre（根据不同 FSx 类型）
+
 Amazon FSx 支持的主要文件系统：
 
 1. Amazon FSx for **Windows File Server** 提供 完全托管的 Windows 文件服务器（使用 SMB 协议）。
