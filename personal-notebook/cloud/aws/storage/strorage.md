@@ -14,3 +14,31 @@ snowball 主要就是给你邮寄一个硬件， 你可以直接把数据存在�
 具体看下面的 PPT：
 
 ![alt text](./aws-snowball.png)
+
+# Amazon FSx
+
+Amazon FSx 支持的主要文件系统：
+
+1. Amazon FSx for **Windows File Server** 提供 完全托管的 Windows 文件服务器（使用 SMB 协议）。
+
+支持 Active Directory、NTFS 权限、用户配额等。
+适合：需要 Windows 文件共享、使用 .NET 应用程序、办公文档共享等。
+使用场景举例：Windows 文件共享
+
+2. Amazon FSx for **Lustre** 高性能的并行文件系统，专为 大数据处理、机器学习、高性能计算（HPC） 设计。
+
+可以和 Amazon S3 集成，实现快速数据加载。
+非常适合：高带宽、低延迟场景（如训练大型 AI 模型、科学计算等）。
+使用场景举例：训练大型 AI 模型
+
+3. Amazon FSx for **NetApp ONTAP** 提供 NetApp ONTAP 文件系统的云版本。
+
+支持多协议（NFS、SMB、iSCSI）、数据压缩、快照和备份。
+适合企业级存储需求、已有 NetApp 环境的迁移。
+使用场景举例：迁移本地 NetApp 存储
+
+4. Amazon FSx for **OpenZFS** 基于开源 ZFS 文件系统。
+
+支持快照、压缩、复制、数据完整性校验。
+适合需要高级存储管理功能的 Linux/Unix 系统。
+使用场景举例：高级文件存储和快照管理
