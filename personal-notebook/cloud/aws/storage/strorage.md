@@ -17,11 +17,6 @@ snowball 主要就是给你邮寄一个硬件， 你可以直接把数据存在�
 
 # Amazon FSx
 
-Amazon FSx 和 S3 的异同：
-
-- Amazon FSx 不同于 S3 服务，S3 只能通过上传和下载来控制你的文件存储，但是 FSx 实际上给你提供了一个文件管理系统，可以像磁盘一样使用，支持读写、权限、目录结构。
-- S3 可以使用的协议是：RESTful API（HTTP PUT/GET/DELETE），但是 Amazon FSx 可以使用的协议有很多，包括 SMB、NFS、iSCSI、Lustre（根据不同 FSx 类型）
-
 Amazon FSx 支持的主要文件系统：
 
 1. Amazon FSx for **Windows File Server** 提供 完全托管的 Windows 文件服务器（使用 SMB 协议）。
@@ -47,3 +42,23 @@ Amazon FSx 支持的主要文件系统：
 支持快照、压缩、复制、数据完整性校验。
 适合需要高级存储管理功能的 Linux/Unix 系统。
 使用场景举例：高级文件存储和快照管理
+
+Amazon FSx 和 S3 的异同：
+
+- Amazon FSx 不同于 S3 服务，S3 只能通过上传和下载来控制你的文件存储，但是 FSx 实际上给你提供了一个文件管理系统，可以像磁盘一样使用，支持读写、权限、目录结构。
+- S3 可以使用的协议是：RESTful API（HTTP PUT/GET/DELETE），但是 Amazon FSx 可以使用的协议有很多，包括 SMB、NFS、iSCSI、Lustre（根据不同 FSx 类型）.
+
+具体对比：
+
+| 对比项       | **Amazon FSx**                               | **Amazon S3**                       |
+| ------------ | -------------------------------------------- | ----------------------------------- |
+| **类型**     | 网络文件系统（File System）                  | 对象存储（Object Storage）          |
+| **典型用途** | 类似本地硬盘或共享盘，挂载给 EC2             | 存放图片、视频、备份、网站内容等    |
+| **操作方式** | 像磁盘一样使用，支持读写、权限、目录结构     | 上传/下载对象，不能修改文件内部内容 |
+| **性能特性** | 高吞吐、低延迟，支持缓存、本地读写           | 面向可扩展性，适合高并发访问        |
+| **文件支持** | 可以直接修改文件的一部分（随机读写）         | 每次都是完整地上传/下载整个对象     |
+| **支持协议** | SMB、NFS、iSCSI、Lustre（根据不同 FSx 类型） | RESTful API（HTTP PUT/GET/DELETE）  |
+
+# AWS Storage Gateway
+
+![alt text](./aws-storage-cloud-native-options.png)
