@@ -17,7 +17,7 @@ snowball 主要就是给你邮寄一个硬件， 你可以直接把数据存在�
 
 # Amazon FSx
 
-Amazon FSx 支持的主要文件系统：
+Amazon FSx 支持的主要文件系统:
 
 1. Amazon FSx for **Windows File Server** 提供 完全托管的 Windows 文件服务器（使用 SMB 协议）。
 
@@ -59,6 +59,13 @@ Amazon FSx 和 S3 的异同：
 | **文件支持** | 可以直接修改文件的一部分（随机读写）         | 每次都是完整地上传/下载整个对象     |
 | **支持协议** | SMB、NFS、iSCSI、Lustre（根据不同 FSx 类型） | RESTful API（HTTP PUT/GET/DELETE）  |
 
+值得注意的是 Amazon FSx 服务是一个 region 级别的服务（类似于共享网盘），不同的 EC2 只要在同一个 region 内就可以和 FSx 产生链接。
+
 # AWS Storage Gateway
+
+实际上 AWS 有多种存储方式
+
+- EBS（Elastic Block Store）块存储服务，比如 EC2，类似于传统计算机的硬盘，用来为单个 EC2 实例提供持久的存储卷
+- EFS（Elastic File System）共享文件存储服务，比如 FSx，类似共享网盘，可以自动扩容缩容，让多个 EC2 进行共享（同 region）。
 
 ![alt text](./aws-storage-cloud-native-options.png)
