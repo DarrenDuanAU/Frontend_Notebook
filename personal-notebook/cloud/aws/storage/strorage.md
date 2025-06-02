@@ -77,3 +77,5 @@ Amazon FSx 和 S3 的异同：
 ![alt text](./volume-gateway.png)
 ![alt text](./tap-gateway.png)
 ![alt text](./storage-gateway.png)
+
+因为 AWS 在推动 hybird cloud（部分服务在云上- on the cloud，部分服务在本地 - on-premises），AWS Storage Gateway 就是其中的关键服务。实际上这个服务类似于 DNS 的 local DNS，可以让本地快速访问常用的在云端储存的文件。
